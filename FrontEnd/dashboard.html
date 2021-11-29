@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="shortcut icon" href="https://www.takvaviya.in/static/epc/images/datasee.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link href="assets/css/toastr.css" rel="stylesheet"/>
+<script src="assets/js/toastr.js"></script>
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style_new.css">
+    <script src="assets/js/render.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script  src="assets/js/script.js"></script>
+
+
+</head>
+<body>
+	<div class="top-header-bg">
+
+	  	<div class="canvas">
+	  		<img src="assets/images/logo1.gif" alt="this slowpoke moves"  style="width=30px"/>
+	      <h1>BCG</h1>
+	  	</div>
+
+	  <div class="log-main">
+	  	<div class="user-logout" title="Logout"><!-- onclick="window.location.href='login'">-->
+	  		<span class="user-align" >
+	  			<i class="fa fa-user-circle" aria-hidden="true"></i>
+	  		</span>
+	  		<span class="user-align" id="show_user" >
+				<script>
+					 document.getElementById("show_user").innerHTML = "Logout"
+				</script>
+	  		</span>
+	  	</div>
+	  </div>
+	  <div class="log-main">
+	  	<div class="log-logout" ><!--data-toggle="modal" data-target="#myModal">-->
+	  		<span class="user-align">
+	  			<i class="fa fa-plus" aria-hidden="true"></i>
+	  		</span>
+	  		<span class="user-align">
+	  			Add Record
+	  		</span>
+	  	</div>
+	  </div>
+		<div class="notification" title="notification">
+			<span class="bell"><i class="fa fa-bell" aria-hidden="true"></i></span>
+		</div>
+
+	  	<div class="top-search-box">
+	  		<div class="input-group search-width">
+			    <input type="text" id="searchProject" class="form-control" placeholder="Search Records ...">
+			    <div class="input-group-append">
+			      <!-- <button class=" " type="button"> -->
+			        <i class="fa fa-search"></i>
+			     <!--  </button> -->
+			    </div>
+			 </div>
+	  	</div>
+
+    <div class="back-btnd">
+      <div class="log-main" onclick="location.href='metrics_dashboard.html';">
+        <div class="log-logout" >
+          <span class="user-align">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+          </span>
+          <span class="user-align">
+            Analytics
+          </span>
+        </div>
+      </div>
+    </div>
+
+	</div>
+	<div class="container-main">
+	<div class="container">
+	  <div class="dc-view-switcher">
+
+	  	<div class="cretae-header">
+		    <a href="#"><span class="cre-tle"> Records</span></a>
+		</div>
+	    <button onclick="v_v('grid-view')"><i class="fa fa-th-large" aria-hidden="true"></i></button>
+        <button  onclick="v_v('list-view')" class="active"><i class="fa fa-th-list" aria-hidden="true"></i></button>
+	  </div>
+	  <hr>
+<!--	  <div id="show1">-->
+		<div class="empty_layer" id="empty_layer"><i class="material-icons">style</i> <p>Use the "Add Project" button to create new project</p></div>
+	  <div data-view="grid-view" class="download-cards" id="append_here">
+
+	  </div>
+
+	</div>
+</div>
+
+
+ <div class="modal" id="myModal" style="margin-top: 7%;z-index: 3000;width: 100;">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 195%;margin-left: -40%;">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Existing Record</h4>
+          <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+         <div class="project-form">
+  		<div class="f1">
+	    <h3><label class="headings">Policy ID - </label>
+	    <label id="p_id"></label></h3>
+	    <label class="headings">Date of Purchase</label>
+		<label id="dop"></label> &nbsp;&nbsp;
+	    <label class="headings">Customer ID </label>
+	    <label id="c_id"></label><br>
+		<label class="headings" for="preminum">Premium</label>( less than 1M )
+	    <input type="text" id="preminum" onkeypress="return blockSpecialChar(event)" maxlength="7"  name="preminum" >
+		<label class="headings">Customer Gender</label>
+	    <input type="text" id="Customer_Gender" >
+		<label class="headings">Income Group</label>
+	    <input type="text" id="Customer_Income_Group">
+		<label class="headings">Customer Region</label>
+		<input type="text" id="Customer_Region">
+	  	</div>
+
+	  	<div class="f2">
+
+
+		<label class="headings">Vehicle Segment</label>
+	    <input type="text" id="vehicle_segment">
+		<label class="headings">Fuel</label>
+		<input type="text" id="Fuel">
+		<input type="checkbox" id="Bodily_injury_liability" name="Bodily_injury_liability" >
+		<label class="headings" for="Bodily_injury_liability">Bodily_injury_liability</label><br>
+		<input type="checkbox" id="Personal_injury_protection" name="Personal_injury_protection" >
+		<label class="headings" for="Personal_injury_protection"> Personal_injury_protection</label><br>
+		<input type="checkbox" id="Property_damage_liability" name="Property_damage_liability" >
+		<label class="headings" for="Property_damage_liability">Property_damage_liability</label><br>
+		<input type="checkbox" id="Collision" name="Collision" >
+		<label class="headings" for="Collision" > Collision</label><br>
+		<input type="checkbox" id="Comprehensive" name="Comprehensive" >
+		<label class="headings" for="Comprehensive"> Comprehensive</label><br>
+		<input type="checkbox" id="Customer_Marital_status" name="Customer_Marital_status">
+		<label class="headings" for="Customer_Marital_status"> Customer_Marital_status</label><br>
+
+	  	</div>
+		</div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" onclick="send_form_data()" class="btn btn-danger done" data-dismiss="modal">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--
+                <script src="assets/js/country.js"></script>
+-->
+
+
+</body>
+</html>

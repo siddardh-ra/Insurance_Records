@@ -1,0 +1,226 @@
+.container {
+    width: 100%;
+    /* position: relative;
+    top: 40px; */
+    /* top: 85px;
+    left: 14%;
+    bottom: 1%;
+    max-width: 1180px;
+    */
+    margin: 0 auto;
+    /* padding: 2em 1em; */
+    height: auto;
+    /* overflow-y: scroll; */
+}
+
+.top-header-bg {
+    /*position: fixed;*/
+    background: #2a3b4c;
+    width: 100%;
+    height: 70px;
+    padding: 13px;
+    /* z-index: 2000; */
+    /*overflow: hidden;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.canvas {
+    float: left;
+    padding-left: 25px;
+}
+
+.canvas img {
+    float: left;
+    width: 25px;
+    margin-top: 5px;
+}
+
+.canvas h1 {
+    font-family: 'Exo', sans-serif;
+    color: #fff;
+    margin: 5px;
+    font-weight: bold;
+    padding-left: 3px;
+    float: left;
+    font-size: 25px;
+}
+
+.back-btnd {
+    float: right;
+    margin-right: 8px;
+    margin-top: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.user-logout {
+    padding: 1px;
+    float: right;
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: #5c6b70;
+    border-radius: 50px;
+    border: 2px solid #425258;
+    margin-top: 6px;
+}
+
+.log-logout {
+    padding: 1px;
+    float: right;
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: #1aaa55;
+    border-radius: 50px;
+    border: 2px solid #8abd9b;
+}
+
+.user-logout .user-align i {
+    padding-right: 5px;
+}
+
+.user-logout .user-align {
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.powered {
+    padding-top: 9px;
+    float: left;
+    color: #fff;
+    padding-left: 9px;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: exo;
+}
+
+
+/*Top dropdown css code start*/
+
+.date-bg {
+    background: #5c6b70;
+    border-radius: 50px;
+    margin-top: -3px;
+    padding: 4px;
+    width: 145px;
+}
+
+.drop-cnt {
+    background-color: #2a3b4c !important;
+}
+
+.drop-cnt a {
+    color: #fff !important;
+}
+
+.drop-cnt a:hover {
+    color: #000 !important;
+}
+
+.dropdown-menu {
+    min-width: 145px !important;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 3px;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: none !important;
+}
+
+
+/*dropdown css end*/
+
+
+/* Card */
+
+.card {
+    background-color: #fff;
+    box-shadow: 0px 1px 2px #00000029;
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+/* Card Ends */
+
+
+/* Tables */
+
+.data-center th {
+    text-align: center;
+}
+
+.data-center td {
+    text-align: center;
+    font-weight: bold;
+}
+
+.bg1 {
+    background: #55AAFF;
+    color: #fff;
+}
+
+.bg2 {
+    background: #99CCFF;
+    color: #fff;
+}
+
+.bg3 {
+    background: #0080FF;
+    color: #fff;
+}
+
+.bg4 {
+    background: #55AAFF;
+    color: #fff;
+}
+
+.header-container {
+    background-color: #000033;
+    box-shadow: 0px 3px 6px #00000029;
+    border: none;
+    color: #f1f1ff;
+}
+
+.table .end {
+    border-top-right-radius: 10px;
+}
+
+.table .initial {
+    border-top-left-radius: 10px;
+}
+
+.title-container {
+    background-color: #E7F2FE;
+    color: #000033;
+    border: none;
+}
+
+.compare-table {
+    box-shadow: 0px 1px 2px #00000029;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #fff;
+}
+
+.indication_icon {
+    float: right;
+    padding-top: 3px;
+}
+
+.article {
+  float: left;
+  width: 48%;
+  padding:50px;
+}
+
+.article:nth-child(odd) {
+  clear: left;
+}
+}
