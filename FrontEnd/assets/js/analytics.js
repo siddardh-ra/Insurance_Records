@@ -165,7 +165,7 @@ const myChart4 = new Chart(
 function initResp(){
     $.ajax({
             type: "GET",
-            url : "http://127.0.0.1:8000/project/get_metrics_data/",
+            url : "https://insurance-record-backend.herokuapp.com/project/get_metrics_data/",
             dataType: 'json',
             success: function (response){
             res = response;

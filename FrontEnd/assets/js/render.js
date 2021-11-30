@@ -4,7 +4,7 @@ var res,render_card;
 function initResp(e){
     $.ajax({
             type: "GET",
-            url : "http://127.0.0.1:8000/project/get_all_data/",
+            url : "https://insurance-record-backend.herokuapp.com/project/get_all_data/",
             dataType: 'json',
             success: function (response){
             res = response;
@@ -97,7 +97,7 @@ var data = {};
                   toastr.info("Saving Record");
                     $.ajax({
                           type: "PUT",
-                          url: "http://127.0.0.1:8000/project/update_record/"+document.getElementById("p_id").innerHTML,
+                          url: "https://insurance-record-backend.herokuapp.com/project/update_record/"+document.getElementById("p_id").innerHTML,
                           dataType: 'json',
                           data: data,
                           success: function (res){
